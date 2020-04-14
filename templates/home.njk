@@ -1,0 +1,16 @@
+---
+layout: base.njk
+templateClass: page-content
+---
+
+{{ content | safe }}
+
+<h2>Upcoming Events</h2>
+{% set eventslist = collections.events | upcoming %}
+{% include "templates/partials/events-list.njk" %}
+
+<h2>Recent Blog Posts</h2>
+{% set postslist = collections.posts | head(-3) %}
+{% include "templates/partials/posts-list.njk" %}
+
+<p>More posts can be found in <a href="{{ '/posts/' | url }}">the archive</a>.</p>

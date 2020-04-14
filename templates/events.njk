@@ -1,0 +1,13 @@
+---
+layout: page.njk
+---
+
+{{ content | safe }}
+
+<h2>Upcoming Events</h2>
+{% set eventslist = collections.events | upcoming %}
+{% include "templates/partials/events-list.njk" %}
+
+<h2>Past Events</h2>
+{% set eventslist = collections.events | past %}
+{% include "templates/partials/events-list.njk" %}

@@ -1,0 +1,29 @@
+---
+layout: base.njk
+---
+
+{{ content | safe }}
+
+<form class="contact-form" aria-labelledby="form-title">
+    <h2 id="form-title">Contact Form</h2>
+    (This is currently just a POC, since form options are still being explored)
+
+    <div class="input-group">
+        <label for="reason">Reason for contacting us</label>
+        <select id="reason">
+            <option>I have a question</option>
+            <option>I'd like to contribute a blog post</option>
+            <option>I'd like to submit a talk</option>
+        </select>
+    </div>
+
+    <div class="input-group">
+        <label for="email">Your Email</label>
+        <input type="email" id="email">
+    </div>
+
+    <div class="input-group">
+        <label for="message">Message</label>
+        <textarea id="message"></textarea>
+    </div>
+</form>

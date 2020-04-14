@@ -1,0 +1,9 @@
+---
+layout: page.njk
+templateClass: page-content
+---
+
+{{ content | safe }}
+
+{% set postslist = collections.posts %}
+{% include "templates/partials/posts-list.njk" %}

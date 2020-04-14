@@ -1,0 +1,8 @@
+<ol class="events">
+{% for event in eventslist %}
+  <li class="event-item{% if event.url == url %} eventlist-item-active{% endif %}">
+    <a href="{{ event.url | url }}" class="event-link">{% if event.data.title %}{{ event.data.title }}{% else %}<code>{{ event.url }}</code>{% endif %}</a>
+    <time class="event-date" datetime="{{ event.date | htmlDateString }}">{{ event.date | readableDate }}</time>
+  </li>
+{% endfor %}
+</ol>

@@ -1,0 +1,15 @@
+{
+  "title": "Seattle Accessibility",
+  "url": "https://a11ysea.org",
+  "description": "",
+  "feed": {
+    "subtitle": "",
+    "filename": "feed.xml",
+    "path": "/feed",
+    "id": "https://a11ysea.org"
+  },
+  "author": {
+    "name": "",
+    "email": ""
+  }
+}
