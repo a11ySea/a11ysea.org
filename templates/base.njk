@@ -5,21 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ renderData.title or title or metadata.title }}</title>
     <meta name="Description" content="{{ renderData.description or description or metadata.description }}">
-    <link rel="stylesheet" href="{{ '/css/index.css' | url }}">
-    <link rel="stylesheet" href="{{ '/css/prism-base16-monokai.dark.css' | url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/index.css' | url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/prism-base16-monokai.dark.css' | url }}">
     <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
   </head>
   <body>
     <header>
-      <h1 class="home"><a href="{{ '/' | url }}">{{ metadata.title }}</a></h1>
+      <img src="{{ '/assets/img/octopus.svg' | url }}" role="img" class="logo" alt="Seattle Accessibility Octopus">
 
       <nav>
         <ul class="nav">
-          <li><a href="/">Home</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/events">Events</a></li>
-          <li><a href="/posts">Blog</a></li>
-          <li><a href="/contact">Contact</a></li>
+          <li><a href="/" {% if page.url == '/' %}aria-current="page"{% endif %}>Home</a></li>
+          <li><a href="/about" {% if page.url == '/about' %}aria-current="page"{% endif %}>About</a></li>
+          <li><a href="/events" {% if page.url == '/events' %}aria-current="page"{% endif %}>Events</a></li>
+          <li><a href="/posts" {% if page.url == '/posts' %}aria-current="page"{% endif %}>Blog</a></li>
+          <li><a href="/contact" {% if page.url == '/contact' %}aria-current="page"{% endif %}>Contact</a></li>
         </ul>
       </nav>
     </header>

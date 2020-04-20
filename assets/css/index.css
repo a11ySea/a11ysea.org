@@ -4,8 +4,8 @@
   --lightgray: #e0e0e0;
   --gray: #C0C0C0;
   --darkgray: #333;
-  --navy: #17050F;
-  --blue: #082840;
+  --lightpurple: #dbd9ea;
+  --purple: #6c407e;
   --white: #fff;
 }
 * {
@@ -32,25 +32,25 @@ p,
   line-height: 1.45;
 }
 a[href] {
-  color: var(--blue);
-}
-a[href]:visited {
-  color: var(--navy);
+  color: var(--purple);
 }
 main {
-  padding: 1rem;
+  padding: 2rem 1rem;
 }
 main :first-child {
   margin-top: 0;
 }
 header {
-  border-bottom: 1px dashed var(--lightgray);
+  background-color: var(--lightpurple);
+  border-bottom: 2px solid var(--purple);
 }
-header:after {
-  content: "";
-  display: table;
-  clear: both;
+
+.logo {
+  display: block;
+  margin: 0 auto 1em;
+  max-width: 20rem;
 }
+
 table {
   margin: 1em 0;
 }
@@ -129,54 +129,64 @@ pre {
 .nav {
   padding: 0;
   list-style: none;
-  float: left;
-  margin-left: 1em;
+  text-align: center;
 }
-.nav-item {
+
+.nav li {
   display: inline-block;
   margin-right: 1em;
 }
-.nav-item a[href]:not(:hover) {
+
+.nav a {
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-transform: uppercase;
   text-decoration: none;
 }
-.nav-item-active {
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+.nav a[aria-current] {
   font-weight: 700;
   text-decoration: underline;
 }
 
 /* Posts list */
-.postlist {
+.posts-list {
   list-style: none;
   padding: 0;
+  margin-bottom: 2em;
 }
-.postlist-item {
-  counter-increment: start-from -1;
+
+.post-item {
+  padding: 1em 1em 1em 0;
+  border-bottom: 1px solid var(--purple);
 }
-.postlist-item:before {
-  display: inline-block;
-  pointer-events: none;
-  content: "" counter(start-from, decimal-leading-zero) ". ";
-  line-height: 100%;
-  text-align: right;
+
+.post-title {
+  display: block;
+  font-size: 1.25em;
+  margin-bottom: 0.5rem;
 }
-.postlist-date,
-.postlist-item:before {
+
+.post-date,
+.post-author {
   font-size: 0.8125em; /* 13px /16 */
   color: var(--darkgray);
 }
-.postlist-date {
+.post-date {
   word-spacing: -0.5px;
 }
-.postlist-link {
-  display: inline-block;
-  padding: 0.25em 0.1875em; /* 4px 3px /16 */
+
+/* Events list */
+.events-list {
+  margin-bottom: 2em;
 }
-.postlist-item-active .postlist-link {
-  font-weight: bold;
-}
-.tmpl-home .postlist-link {
-  font-size: 1.1875em; /* 19px /16 */
-  font-weight: 700;
+
+.events-list li {
+  margin-bottom: 0.5em;
 }
 
 
@@ -223,4 +233,27 @@ a[href].direct-link:focus:visited,
 :hover > a[href].direct-link,
 :hover > a[href].direct-link:visited {
   color: #aaa;
+}
+
+/* Contact Form */
+
+label {
+  display: block;
+  font-size: 1.25em;
+  margin-bottom: 0.25em;
+}
+
+.input-group {
+  margin: 2em 0;
+}
+
+input, textarea, select {
+  display: block;
+  width: 30rem;
+  max-width: 100%;
+  padding: 0.5em;
+}
+
+input, textarea {
+  border: 1px solid var(--darkgray);
 }
