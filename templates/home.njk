@@ -3,14 +3,23 @@ layout: base.njk
 templateClass: page-content
 ---
 
-{{ content | safe }}
+<div class="two-col">
+    <section>
+        {{ content | safe }}
 
-<h2>Upcoming Events</h2>
-{% set eventslist = collections.events | upcoming %}
-{% include "templates/partials/events-list.njk" %}
+        <h3>Recent Blog Posts</h3>
+        {% set postslist = collections.posts | head(-3) %}
+        {% include "templates/partials/posts-list.njk" %}
 
-<h2>Recent Blog Posts</h2>
-{% set postslist = collections.posts | head(-3) %}
-{% include "templates/partials/posts-list.njk" %}
+        <p>More posts can be found in <a href="{{ '/posts/' | url }}">the blog archive</a>.</p>
+    </section>
 
-<p>More posts can be found in <a href="{{ '/posts/' | url }}">the blog archive</a>.</p>
+    <section>
+        <h3>Upcoming Events</h3>
+        {% set eventslist = collections.events | upcoming %}
+        {% include "templates/partials/events-list.njk" %}
+
+        <h3>Past Events</h3>
+        
+    </section>
+</div>

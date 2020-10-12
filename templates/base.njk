@@ -11,8 +11,18 @@
   </head>
   <body>
     <header>
-      <img src="{{ '/assets/img/octopus.svg' | url }}" role="img" class="logo" alt="Seattle Accessibility Octopus">
+      <div class="siteTitle">
+          <img src="{{ '/assets/img/octopus.svg' | url }}" role="img" class="logo" alt="Seattle Accessibility Octopus">
+        <h1>Accessibility Seattle Foundation</h1>
+      </div>
 
+      <figure>
+        <img src="{{ '/assets/img/seattle-skyline.jpg' | url }}" alt="Seattle skyline">
+        <div>
+          <h2>A11ySea</h2>
+          <p>Seattle<br />Accessibility Meetup</p>
+        </div>
+      </figure>
       <nav>
         <ul class="nav">
           <li><a href="/" {% if page.url == '/' %}aria-current="page"{% endif %}>Home</a></li>

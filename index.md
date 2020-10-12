@@ -1,8 +1,8 @@
 ---
 layout: home.njk
-title: Seattle Accessibility (Meetup?)
+title: A11ySea - Accessibility Seattle Foundation
 ---
 
-# Seattle Accessibility Meetup
+## Welcome to the A11ySea website!
 
-Some introductory text about what we do, how the site is laid out, etc.
+We’re so happy you’re here.

@@ -1,4 +1,5 @@
 :root {
+  --black: #000;
   --red: #C5004A;
   --darkred: #7F0036;
   --lightgray: #e0e0e0;
@@ -7,6 +8,8 @@
   --lightpurple: #dbd9ea;
   --purple: #6c407e;
   --white: #fff;
+  --headerBG: rgb(33, 33, 33);
+  --headerFG: #fff;
 }
 * {
   box-sizing: border-box;
@@ -22,11 +25,11 @@ body {
 p:last-child {
   margin-bottom: 0;
 }
-p,
+/*p,
 .tmpl-post li,
 img {
-  max-width: 37.5em; /* 600px /16 */
-}
+  max-width: 37.5em; /* 600px /16 
+}*/
 p,
 .tmpl-post li {
   line-height: 1.45;
@@ -41,16 +44,9 @@ main :first-child {
   margin-top: 0;
 }
 header {
-  background-color: var(--lightpurple);
-  border-bottom: 2px solid var(--purple);
+  background-color: var(--headerBG);
+  color: var(--headerFG);
 }
-
-.logo {
-  display: block;
-  margin: 0 auto 1em;
-  max-width: 20rem;
-}
-
 table {
   margin: 1em 0;
 }
@@ -115,14 +111,55 @@ pre {
 }
 
 /* Header */
-.home {
-  padding: 0 1rem;
+.header {
+  padding: 1rem;
   float: left;
   margin: 1rem 0; /* 16px /16 */
   font-size: 1em; /* 16px /16 */
 }
 .home :link:not(:hover) {
   text-decoration: none;
+}
+.siteTitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0.25rem;
+}
+.siteTitle h1 {
+  font-size: 1.25rem;
+}
+.logo {
+  display: block;
+  margin: 0;
+  width: 4rem;
+}
+header figure {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
+}
+header figure img {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+}
+header figure div {
+  align-items: center;
+  background-color: rgba(0,0,0,0.5);
+  bottom: 0;
+  display: flex;
+  padding: 1.5rem 1rem;
+  position: absolute;
+  width: 100%;
+}
+header figure div h2 {
+  font-size: 2.5rem;
+  margin: 0 1rem 0 0;
+}
+header figure div p {
+  margin: 0;
 }
 
 /* Nav */
@@ -135,11 +172,15 @@ pre {
 .nav li {
   display: inline-block;
   margin-right: 1em;
+  padding-bottom: 1rem;
 }
 
 .nav a {
-  font-size: 1.25rem;
+  color: var(--headerFG);
+  display: block;
+  font-size: 1rem;
   font-weight: bold;
+  padding: 0.25rem;
   text-transform: uppercase;
   text-decoration: none;
 }
@@ -256,4 +297,9 @@ input, textarea, select {
 
 input, textarea {
   border: 1px solid var(--darkgray);
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
 }
